@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const { PORT = 8008 } = process.env;
 const app = express();
 const Orders = require("./models/orders");
+
 // MIDDLEWARE
 app.use(cors());
 app.use(morgan("dev"));
@@ -52,6 +53,7 @@ app.post("/orders", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 // Show
 app.get("/orders/:id", async (req, res) => {
   try {
