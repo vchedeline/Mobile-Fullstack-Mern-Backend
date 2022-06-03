@@ -3,7 +3,7 @@ require("../config/connection");
 
 const OrdersSchema = new mongoose.Schema({
   user: String,
-  items: [String],
+  items: { type: Array, default: [] },
   total: Number,
 });
 

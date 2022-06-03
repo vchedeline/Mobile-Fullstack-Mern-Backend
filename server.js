@@ -5,7 +5,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const { PORT = 8008 } = process.env;
 const app = express();
-
+const Orders = require("./models/orders");
 // MIDDLEWARE
 app.use(cors());
 app.use(morgan("dev"));
