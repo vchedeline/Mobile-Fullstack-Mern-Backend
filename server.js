@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const { PORT = 8008 } = process.env;
 const app = express();
 const Orders = require("./models/orders");
-
+const menu = require("./models/menu");
 // MIDDLEWARE
 app.use(cors());
 app.use(morgan("dev"));
@@ -26,6 +26,10 @@ app.get("/orders", async (req, res) => {
   } catch (error) {
     res.status(400).json(error);
   }
+});
+
+app.get("/menu", (req, res) => {
+  res.json(menu);
 });
 // Delete
 app.delete("/orders/:id", async (req, res) => {
